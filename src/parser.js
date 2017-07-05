@@ -11,6 +11,10 @@ import {hasTitle} from "./title";
 import {getTemplateContent, readFileFromPath} from "./template";
 const markdownLinkFormatRegExp = /\[([^\]]*?)\]\(([^\)]*?)\)/gm;
 
+Handlebars.registerHelper('raw', function(options) {
+  return options.fn();
+});
+
 /**
  * A counter to count how many code are imported.
  */
